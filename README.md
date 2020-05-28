@@ -18,6 +18,7 @@ Aliases
   * `brewL` lists installed formulae that don't depend on other installed formula.
   * `brewo` lists outdated installed formulae.
   * `brews` performs a search of formula names and cask tokens.
+  * `brewS` manages background services with macOS' launchctl daemon manager.
   * `brewu` updates Homebrew and all formulae.
   * `brewU` upgrades outdated and unpinned formulae.
   * `brewx` uninstalls a given formula.
