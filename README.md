@@ -33,7 +33,8 @@ Aliases
   * `caskI` installs given cask.
   * `caskl` lists installed casks.
   * `casko` lists outdated installed casks.
-  * `caskU` reinstalls given cask.
+  * `caskr` reinstalls given cask.
+  * `caskU` upgrades outdated casks that do not support auto_updates
   * `caskx` uninstalls given cask.
   * `caskX` uninstalls even if given cask does not appear to be present.
   * `caskz` zaps all files associated with given cask.
