@@ -1,3 +1,8 @@
+# Ensure brew is available
+if (( ! ${+commands[brew]} )); then
+  return 1
+fi
+
 #
 # Aliases
 #
