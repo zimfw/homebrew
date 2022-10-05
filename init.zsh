@@ -26,7 +26,6 @@ alias brewx='brew uninstall --formula'
 alias brewX='brew uninstall --formula --force'
 
 # Homebrew Cask
-alias cask='brew cask'
 alias caske='brew edit --cask'
 alias caski='brew info --cask'
 alias caskI='brew install --cask'

@@ -27,7 +27,6 @@ Aliases
 
 ### Homebrew Cask
 
-  * `cask` is short for `brew cask`.
   * `caske` edits given cask.
   * `caski` shows information about given cask.
   * `caskI` installs given cask.
