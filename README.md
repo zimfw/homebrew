@@ -8,6 +8,7 @@ Aliases
 
 ### Homebrew
 
+  * `brewa` auto uninstalls formulae that are no longer needed.
   * `brewc` cleans the cache.
   * `brewC` scrubs the cache, including downloads for the latest versions.
   * `brewd` checks your system for potential problems.

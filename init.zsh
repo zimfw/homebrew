@@ -8,6 +8,7 @@ fi
 #
 
 # Homebrew
+alias brewa='brew autoremove'
 alias brewc='brew cleanup'
 alias brewC='brew cleanup -s'
 alias brewd='brew doctor --verbose'
