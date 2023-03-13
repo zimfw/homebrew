@@ -3,6 +3,8 @@ if (( ! ${+commands[brew]} )); then
   return 1
 fi
 
+fpath=(/opt/homebrew/share/zsh/site-functions(N) /home/linuxbrew/.linuxbrew/share/zsh/site-functions(N) ${fpath})
+
 #
 # Aliases
 #

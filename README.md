@@ -3,6 +3,8 @@ homebrew
 
 Defines Homebrew aliases.
 
+Also adds the Homebrew-managed `zsh/site-functions` path into your `fpath`.
+
 Aliases
 -------
 
