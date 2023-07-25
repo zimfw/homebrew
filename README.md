@@ -1,12 +1,20 @@
 homebrew
 ========
 
-Defines Homebrew aliases.
+[zim-module](https://github.com/zimfw/zimfw) for [homebrew](https://brew.sh/).
 
-Also adds the Homebrew-managed `zsh/site-functions` path into your `fpath`.
+To ensure that subsequent modules, which rely on binaries added via Homebrew, operate as intended, load the Homebrew module at the beginning of your `.zimrc` file.
+After including the module, you can safely discard the Homebrew evaluation call from your .zshrc file.
 
-Aliases
--------
+## Features
+
+- Defines Homebrew aliases.
+- Adds the Homebrew-managed `zsh/site-functions` path into your `fpath`.
+- Pre-compiles the `brew shellenv` command to eliminate recurring eval calls.
+
+## Aliases
+
+The alias definitions can be disabled by setting the variable `ZIM_HOMEBREW_ALIASES` to `false`.
 
 ### Homebrew
 
