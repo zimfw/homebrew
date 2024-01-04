@@ -24,7 +24,7 @@ alias brewr='brew reinstall --formula'
 alias brews='brew search --formula'
 alias brewS='brew services'
 alias brewu='brew update'
-alias brewU='brew upgrade --formula --ignore-pinned'
+alias brewU='brew upgrade --formula'
 alias brewx='brew uninstall --formula'
 alias brewX='brew uninstall --formula --force'
 
