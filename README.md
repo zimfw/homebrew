@@ -6,7 +6,7 @@ Sets up the Zsh shell integration for Homebrew and adds the Homebrew-managed
 
 Also defines Homebrew aliases.
 
-The following should be removed from your `~/.zshrc`, since this module will
+The following can be removed from your `~/.zshrc`, since this module will
 already take care of it:
 
     eval "$(/path/to/brew shellenv)"
