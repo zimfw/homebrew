@@ -1,9 +1,15 @@
 homebrew
 ========
 
-Defines Homebrew aliases.
+Sets up the Zsh shell integration for Homebrew and adds the Homebrew-managed
+`zsh/site-functions` path into your `fpath`.
 
-Also adds the Homebrew-managed `zsh/site-functions` path into your `fpath`.
+Also defines Homebrew aliases.
+
+The following should be removed from your `~/.zshrc`, since this module will
+already take care of it:
+
+    eval "$(/path/to/brew shellenv)"
 
 Aliases
 -------
@@ -41,3 +47,9 @@ Aliases
   * `caskx` uninstalls given cask.
   * `caskX` uninstalls even if given cask does not appear to be present.
   * `caskz` zaps all files associated with given cask.
+
+Requirements
+------------
+
+This module should be sourced *first*, before any other, so commands installed
+via Homebrew are available to the other modules when needed.

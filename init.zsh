@@ -1,9 +1,22 @@
-# Ensure brew is available
-if (( ! ${+commands[brew]} )); then
-  return 1
-fi
+() {
+  local prefix cmd
+  for prefix in /opt/homebrew /usr/local /home/linuxbrew/.linuxbrew; do
+    if [[ -e ${prefix}/bin/brew ]]; then
+      cmd=${prefix}/bin/brew
+      break
+    fi
+  done
+  if [[ -z ${cmd} ]] return 1
+  if [[ ! ( -s ${1} && ${1} -nt ${cmd} ) ]]; then
+    ${cmd} shellenv >! ${1} || return 1
+    zcompile -UR ${1}
+  fi
+  source ${1}
+} ${0:h}/brew-shellenv.zsh || return 1
 
-fpath=(/opt/homebrew/share/zsh/site-functions(N) /home/linuxbrew/.linuxbrew/share/zsh/site-functions(N) ${fpath})
+if (( ! ${fpath[(Ie)${HOMEBREW_PREFIX}/share/zsh/site-functions]} )); then
+  fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions ${fpath})
+fi
 
 #
 # Aliases
