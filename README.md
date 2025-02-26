@@ -1,8 +1,7 @@
 homebrew
 ========
 
-Sets up the Zsh shell integration for Homebrew and adds the Homebrew-managed
-`zsh/site-functions` path into your `fpath`.
+Sets up the Zsh shell integration for Homebrew.
 
 Also defines Homebrew aliases.
 

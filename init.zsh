@@ -15,9 +15,6 @@ if (( ! ${+HOMEBREW_PREFIX} )); then
     source ${1}
   } ${0:h}/brew-shellenv.zsh || return 1
 fi
-if (( ! ${fpath[(Ie)${HOMEBREW_PREFIX}/share/zsh/site-functions]} )); then
-  fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions ${fpath})
-fi
 
 #
 # Aliases
