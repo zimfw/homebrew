@@ -33,7 +33,7 @@ Aliases
   * `brewx` uninstalls a given formula.
   * `brewX` deletes all installed versions of given formula.
 
-### Homebrew Cask (on macOS)
+### Homebrew Cask
 
   * `caske` edits given cask.
   * `caski` shows information about given cask.
