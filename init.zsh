@@ -8,12 +8,14 @@ if (( ! ${+HOMEBREW_PREFIX} )); then
       fi
     done
     if [[ -z ${cmd} ]] return 1
-    if [[ ! ( -s ${1} && ${1} -nt ${cmd} ) ]]; then
-      ${cmd} shellenv >! ${1} || return 1
-      zcompile -UR ${1}
-    fi
-    source ${1}
-  } ${0:h}/brew-shellenv.zsh || return 1
+    # Do not cache because brew shellenv script can contain an explicit PATH value. ¯\_(ツ)_/¯
+    # See https://github.com/Homebrew/brew/pull/18188
+    eval "$(${cmd} shellenv)" || return 1
+  } || return 1
+fi
+# brew shellenv script is not idempotent. See https://github.com/Homebrew/brew/pull/15527
+if [[ ${path[1]} != ${HOMEBREW_PREFIX}/bin ]]; then
+  typeset -U path=(${HOMEBREW_PREFIX}/bin ${HOMEBREW_PREFIX}/sbin ${path})
 fi
 
 #
