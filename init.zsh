@@ -1,4 +1,8 @@
-if (( ! ${+HOMEBREW_PREFIX} )); then
+if (( ${+HOMEBREW_PREFIX} )); then
+  # brew shellenv script is not idempotent. See https://github.com/Homebrew/brew/pull/15527
+  typeset -U fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions ${fpath})
+  typeset -U path=(${HOMEBREW_PREFIX}/bin ${HOMEBREW_PREFIX}/sbin ${path})
+else
   () {
     local prefix cmd
     for prefix in /opt/homebrew /usr/local /home/linuxbrew/.linuxbrew; do
@@ -12,10 +16,6 @@ if (( ! ${+HOMEBREW_PREFIX} )); then
     # See https://github.com/Homebrew/brew/pull/18188
     eval "$(${cmd} shellenv)" || return 1
   } || return 1
-fi
-# brew shellenv script is not idempotent. See https://github.com/Homebrew/brew/pull/15527
-if [[ ${path[1]} != ${HOMEBREW_PREFIX}/bin ]]; then
-  typeset -U path=(${HOMEBREW_PREFIX}/bin ${HOMEBREW_PREFIX}/sbin ${path})
 fi
 
 #
