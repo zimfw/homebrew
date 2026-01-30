@@ -1,7 +1,7 @@
 if (( ${+HOMEBREW_PREFIX} )); then
   # brew shellenv script is not idempotent. See https://github.com/Homebrew/brew/pull/15527
-  typeset -U fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions ${fpath})
-  typeset -U path=(${HOMEBREW_PREFIX}/bin ${HOMEBREW_PREFIX}/sbin ${path})
+  typeset -gU fpath=(${HOMEBREW_PREFIX}/share/zsh/site-functions ${fpath})
+  typeset -gU path=(${HOMEBREW_PREFIX}/bin ${HOMEBREW_PREFIX}/sbin ${path})
 else
   () {
     local prefix cmd
