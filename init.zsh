@@ -11,7 +11,7 @@ else
         break
       fi
     done
-    if [[ -z ${cmd} ]] return 1
+    [[ -n ${cmd} ]] || return 1
     # Do not cache because brew shellenv script can contain an explicit PATH value. ¯\_(ツ)_/¯
     # See https://github.com/Homebrew/brew/pull/18188
     eval "$(${cmd} shellenv)" || return 1
